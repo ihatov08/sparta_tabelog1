@@ -9,6 +9,10 @@ class ReviewsController < ApplicationController
 
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
 
 
   def create
@@ -21,6 +25,11 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+
+ def destroy
+  @review = Review.find(params[:id])
+  @comment.destroy
+ end
 
  private
  def review_params
