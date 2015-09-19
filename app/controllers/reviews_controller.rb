@@ -4,6 +4,13 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def show
+    @restaurant = Restaurant.find(params[:id])
+
+  end
+
+
+
   def create
     @review= Review.new(review_params)
     @review.user_id = current_user.id
