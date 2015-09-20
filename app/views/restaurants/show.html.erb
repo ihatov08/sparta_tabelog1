@@ -15,26 +15,34 @@
 
 
 
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">レビュー一覧</div>
 
-
-<p id="notice"><%= notice %></p>
-
-
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
-<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %> |
-
-
-    <hr>
-
-    <!-- <h2>レビュー一覧</h2> -->
+<!-- <p id="notice"><%= notice %></p> -->
 <% @restaurant.reviews.each do |review| %>
-  <%= review.body %> <br>
-        <%= review.rate %><br>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><%= review.body %><%= review.rate %></li>
 
+  </ul>
+</div>
 
 <% end %>
+<button class="btn btn-default" type="submit"><%= link_to 'レストラン情報編集', edit_restaurant_path(@restaurant) %></button>
+<button class="btn btn-default" type="submit"><%= link_to '戻る', restaurants_path %></button>
+<button class="btn btn-default" type="submit"><%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %></button>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
