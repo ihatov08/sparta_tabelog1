@@ -2,19 +2,27 @@
 <h1>レストラン一覧</h1>
 <% @restaurants.each do |restaurant| %>
 
+
+
+
+
+
+
 <div class="panel panel-default">
   <div class="panel-heading"><%= link_to restaurant.title, restaurant %></div>
   <div class="panel-body">
-    Panel content
+
+
   </div>
 </div>
 
 
-<%= link_to 'Edit', edit_restaurant_path(restaurant) %>
-        <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'New Restaurant', new_restaurant_path %>
+
+
+
 
 
     <% end %>
+<button type="button" class="btn btn-default"><%= link_to '新しくお店を登録する', new_restaurant_path %></button>
 
 
