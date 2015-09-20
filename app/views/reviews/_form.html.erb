@@ -5,11 +5,11 @@
  </div>
  <div class="form-group">
   <%= f.label :rate, '評価' %><br>
-  <%= f.text_field :rate, class: "form-controll" %>
+  <%= f.select :rate, {"１点" => "1", "２点" => "2", "３点" => "3", "４点" => "4", "５点" => "5"}  %>
 
 
  </div>
- <%= f.submit %>
+ <%= f.submit "レビューを投稿する" %>
  <% end %>
 
 </div>

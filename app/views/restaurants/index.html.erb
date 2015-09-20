@@ -1,33 +1,20 @@
 <p id="notice"><%= notice %></p>
+<h1>レストラン一覧</h1>
+<% @restaurants.each do |restaurant| %>
 
-<h1>Listing Restaurants</h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= link_to restaurant.title, restaurant %></div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Tel</th>
-      <th>Address</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.title %></td>
-        <td><%= restaurant.tel %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.url %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<%= link_to 'Edit', edit_restaurant_path(restaurant) %>
+        <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'New Restaurant', new_restaurant_path %>
+
+
+    <% end %>
+
+
